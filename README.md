@@ -6,8 +6,8 @@
 # Swagger:
 Se puede acceder a la documentación de las apis mediante 2 urls:
 
-* json: [url]/api-poc/v2/api-docs
-* html: [url]/api-poc/swagger-ui.html, en este caso también es posible ejecutarlas.
+* json: http://localhost:8080/api-poc/v2/api-docs
+* html: http://localhost:8080/api-poc/swagger-ui.html, en este caso también es posible ejecutarlas.
 
 # Spring-boot actuator
 ## Endpoints
