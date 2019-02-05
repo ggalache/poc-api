@@ -1,0 +1,1 @@
+INSERT INTO USERS (id,username,password,enabled) values (1,'baufest','baufest2019',true);
