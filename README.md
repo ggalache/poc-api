@@ -33,3 +33,4 @@ management.endpoint.health.show-details=always
  ```
 ### Links útiles:
 * https://www.callicoder.com/spring-boot-actuator-metrics-monitoring-dashboard-prometheus-grafana/
+* https://aboullaite.me/spring-boot-elastic-kibana/
