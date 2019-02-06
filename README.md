@@ -34,11 +34,14 @@ management.endpoints.web.exposure.include=*
 management.endpoint.health.show-details=always
  ```
 ### Links útiles:
-* Integración con herramientas de monitoreo:
-   *  https://www.callicoder.com/spring-boot-actuator-metrics-monitoring-dashboard-prometheus-grafana/ 
-   * https://aboullaite.me/spring-boot-elastic-kibana/   
-* https://www.vojtechruzicka.com/spring-boot-actuator/
-* https://mydeveloperplanet.com/2018/04/18/spring-boot-actuator-in-spring-boot-2-0/
 * web oficial: 
    * https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-endpoints.html
    * https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-metrics.html
+* Integración con herramientas de monitoreo:
+   *  https://www.callicoder.com/spring-boot-actuator-metrics-monitoring-dashboard-prometheus-grafana/ 
+   * https://aboullaite.me/spring-boot-elastic-kibana/   
+* Otros:
+   * https://www.vojtechruzicka.com/spring-boot-actuator/
+   * https://mydeveloperplanet.com/2018/04/18/spring-boot-actuator-in-spring-boot-2-0/
+   * https://aboullaite.me/an-introduction-to-spring-boot-actuator/
+
