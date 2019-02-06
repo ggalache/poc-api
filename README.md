@@ -40,6 +40,8 @@ management.endpoint.health.show-details=always
 * Integración con herramientas de monitoreo:
    *  https://www.callicoder.com/spring-boot-actuator-metrics-monitoring-dashboard-prometheus-grafana/ 
    * https://aboullaite.me/spring-boot-elastic-kibana/   
+* Métricas:
+   * https://spring.io/blog/2018/03/16/micrometer-spring-boot-2-s-new-application-metrics-collector
 * Otros:
    * https://www.vojtechruzicka.com/spring-boot-actuator/
    * https://mydeveloperplanet.com/2018/04/18/spring-boot-actuator-in-spring-boot-2-0/
