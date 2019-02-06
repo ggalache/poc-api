@@ -1,5 +1,6 @@
 package ar.com.galicia.pocapi.domain.user;
 
+import java.util.Collection;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,6 +36,11 @@ public class UserServiceImpl implements UserService {
             return optUser.get();
         }
         throw new UserNotFoundException(username);
+	}
+
+	@Override
+	public Collection<User> fetchAll() {
+		return userRepositoy.findAll();
 	}
 
 }

@@ -1,5 +1,7 @@
 package ar.com.galicia.pocapi.domain.user;
 
+import java.util.Collection;
+
 import ar.com.galicia.pocapi.domain.entities.User;
 import ar.com.galicia.pocapi.exceptions.UserNotAuthenticatedExeception;
 import ar.com.galicia.pocapi.exceptions.UserNotFoundException;
@@ -28,4 +30,11 @@ public interface UserService {
 	 * @return el usuario.
 	 */
 	User fetchUserByUsername(String username) throws UserNotFoundException;
+
+	/**
+	 * Busca todos los usuarios de la base 
+	 * 
+	 * @return la lista de usuarios.
+	 */
+	Collection<User> fetchAll();
 }
