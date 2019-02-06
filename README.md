@@ -39,4 +39,6 @@ management.endpoint.health.show-details=always
    * https://aboullaite.me/spring-boot-elastic-kibana/   
 * https://www.vojtechruzicka.com/spring-boot-actuator/
 * https://mydeveloperplanet.com/2018/04/18/spring-boot-actuator-in-spring-boot-2-0/
-* web oficial: https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-endpoints.html
+* web oficial: 
+   * https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-endpoints.html
+   * https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-metrics.html
