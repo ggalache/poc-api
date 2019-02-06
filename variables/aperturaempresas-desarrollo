@@ -1,0 +1,22 @@
+APP_NAME=apirest-poc
+APP_CONTEXT_PATH=/api-poc
+
+#Enabling H2 Console
+APP_CONSOLE_ENABLE=true
+
+APP_DATASOURCE_URL=jdbc:h2:mem:testdb
+APP_DATASOURCE_DRIVER_CLASS=org.h2.Driver
+APP_DATASOURCE_USERNAME=sa
+APP_DATASOURCE_PASSWORD=
+APP_DATASOURCE_DATA=classpath*:db/data/data-h2_*.sql
+APP_DATASOURCE_JP_DATA_BASE=org.hibernate.dialect.H2Dialect
+
+
+#Actuator
+#For the sake of simplicity, I disabled security for actuator endpoints
+APP_SECURIRY_ENABLED=false 
+#incluir los que se quiera
+APP_ENDPOINTS_EXPOSURE_INCLUDE=*
+
+# HEALTH ENDPOINT
+APP_ENDPOINT_HEALT_SHOW_DETAILS=always
