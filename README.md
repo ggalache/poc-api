@@ -35,3 +35,4 @@ management.endpoint.health.show-details=always
 * https://www.callicoder.com/spring-boot-actuator-metrics-monitoring-dashboard-prometheus-grafana/
 * https://aboullaite.me/spring-boot-elastic-kibana/
 * https://www.vojtechruzicka.com/spring-boot-actuator/
+* web oficial: https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-endpoints.html
