@@ -13,6 +13,4 @@ public class PocApiApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(PocApiApplication.class, args);
 	}
-
 }
-

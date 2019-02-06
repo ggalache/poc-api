@@ -6,24 +6,22 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import ar.com.galicia.pocapi.domain.entities.User;
 import ar.com.galicia.pocapi.domain.user.UserService;
 import ar.com.galicia.pocapi.exceptions.UserNotFoundException;
 
 @RestController
-@RequestMapping("/api/user")
 public class UserController {
 
 	@Autowired
 	private UserService userService;
 	
-	@RequestMapping(path="{username}", method = RequestMethod.GET)
-	public User getUser(@PathVariable("username") String username) {
+	@RequestMapping(value="/api/user/{username}", method = RequestMethod.GET)
+	public String getUser(@PathVariable("username") String username) {
 		try {
-			return userService.fetchUserByUsername(username);
+			return userService.fetchUserByUsername(username).toString();
 		} catch (UserNotFoundException e) {
 			e.printStackTrace();
+			return "No hay usuario";
 		}
-		return null;
 	}
 }
