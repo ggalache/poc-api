@@ -19,7 +19,9 @@ Se puede acceder a la documentación de las apis mediante 2 urls:
 2. Todos los endpoints habilitados: http://localhost:8080/api-poc/actuator/
 
 ## Configuración
-Se configura en el archivo application.properties. 
+Se puede configurar que endpints habilitar, cuales exponer, temas de seguridd, etc. 
+Se realiza através del archivo application.properties.
+
 Por ejemplo:
  ```
 #Actuator
