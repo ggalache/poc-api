@@ -5,7 +5,7 @@ package ar.com.galicia.pocapi.exceptions;
  * 
  * @author mrsanchez
  */
-public class UserNotAuthenticatedExeception extends Exception {
+public class UserNotAuthenticatedExeception extends RuntimeException {
 
 	private static final long serialVersionUID = 1942298648585808185L;
 

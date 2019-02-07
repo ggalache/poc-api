@@ -20,9 +20,8 @@ public interface UserService {
 	 * @param username el nombre de usuario.
 	 * @param password el password del usuario.
 	 * @return el usuario loggeado.
-	 * @throws UserNotAuthenticatedExeception Si no puede loggear el usuario.
 	 */
-	User login(String username, String password) throws UserNotAuthenticatedExeception;
+	User login(String username, String password);
 	
 	/**
 	 * Busca un usuario en el repositorio.
@@ -30,7 +29,7 @@ public interface UserService {
 	 * @param username el nombre de usuario.
 	 * @return el usuario.
 	 */
-	User fetchUserByUsername(String username) throws UserNotFoundException;
+	User fetchUserByUsername(String username);
 
 	/**
 	 * Busca todos los usuarios de la base 
@@ -44,21 +43,19 @@ public interface UserService {
 	 * 
 	 * @param user el usuario.
 	 */
-	void createUser(User user) throws UserAlreadyExistsException;
+	void createUser(User user);
 	
 	/**
 	 * Edita los datos de un usuario particular.
 	 * 
 	 * @param user el usuario.
-	 * @throws UserNotFoundException si no existe el usuario a modificar.
 	 */
-	void editUser(User user) throws UserNotFoundException;
+	void editUser(User user);
 	
 	/**
 	 * Elimina el usuario con el nombre de usuario dado.
 	 * 
 	 * @param username el nombre de usuario.
-	 * @throws UserNotFoundException si no existe el usuario a eliminar.
 	 */
-	void deleteUserByUsername(String username) throws UserNotFoundException;
+	void deleteUserByUsername(String username);
 }

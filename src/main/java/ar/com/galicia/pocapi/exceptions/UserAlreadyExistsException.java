@@ -5,7 +5,7 @@ package ar.com.galicia.pocapi.exceptions;
  * 
  * @author mrsanchez
  */
-public class UserAlreadyExistsException extends Exception {
+public class UserAlreadyExistsException extends RuntimeException {
 
 	private static final long serialVersionUID = -2517254186634600230L;
 
