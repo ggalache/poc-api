@@ -3,6 +3,7 @@ package ar.com.galicia.pocapi.domain.user;
 import java.util.Collection;
 
 import ar.com.galicia.pocapi.domain.entities.User;
+import ar.com.galicia.pocapi.exceptions.UserAlreadyExistsException;
 import ar.com.galicia.pocapi.exceptions.UserNotAuthenticatedExeception;
 import ar.com.galicia.pocapi.exceptions.UserNotFoundException;
 
@@ -37,4 +38,27 @@ public interface UserService {
 	 * @return la lista de usuarios.
 	 */
 	Collection<User> fetchAll();
+	
+	/**
+	 * Crea un usuario con los datos dados.
+	 * 
+	 * @param user el usuario.
+	 */
+	void createUser(User user) throws UserAlreadyExistsException;
+	
+	/**
+	 * Edita los datos de un usuario particular.
+	 * 
+	 * @param user el usuario.
+	 * @throws UserNotFoundException si no existe el usuario a modificar.
+	 */
+	void editUser(User user) throws UserNotFoundException;
+	
+	/**
+	 * Elimina el usuario con el nombre de usuario dado.
+	 * 
+	 * @param username el nombre de usuario.
+	 * @throws UserNotFoundException si no existe el usuario a eliminar.
+	 */
+	void deleteUserByUsername(String username) throws UserNotFoundException;
 }
