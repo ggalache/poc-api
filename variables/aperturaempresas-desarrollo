@@ -1,5 +1,5 @@
 APP_NAME=apirest-poc
-APP_CONTEXT_PATH=/api-poc
+APP_CONTEXT_PATH=/poc-api
 
 #Enabling H2 Console
 APP_CONSOLE_ENABLE=true
