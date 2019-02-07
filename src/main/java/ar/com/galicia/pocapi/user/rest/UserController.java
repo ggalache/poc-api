@@ -2,8 +2,11 @@ package ar.com.galicia.pocapi.user.rest;
 
 import java.util.Collection;
 
+import javax.websocket.server.PathParam;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -47,13 +50,10 @@ public class UserController {
 	}
 	
 	@RequestMapping(value="/user/create", method = RequestMethod.POST)
-	public User createUser(@RequestParam("username") String username, @RequestParam("password") String password) {
-		User user = new User();
-		user.setUsername(username);
-		user.setPassword(password);
+	public User createUser(@RequestBody User user) {
 		try {
 			userService.createUser(user);
-			return userService.fetchUserByUsername(username);
+			return userService.fetchUserByUsername(user.getUsername());
 		} catch (UserAlreadyExistsException|UserNotFoundException e) {
 			e.printStackTrace();
 			return null;
@@ -61,23 +61,18 @@ public class UserController {
 	}
 	
 	@RequestMapping(value="/user/update", method = RequestMethod.PUT)
-	public User updateUser(@RequestParam("username") String username, @RequestParam("password") String password,
-			@RequestParam("enabled") Boolean enabled) {
-		User user = new User();
-		user.setUsername(username);
-		user.setPassword(password);
-		user.setEnabled(enabled);
+	public User updateUser(@RequestBody User user) {
 		try {
 			userService.editUser(user);
-			return userService.fetchUserByUsername(username);
+			return userService.fetchUserByUsername(user.getUsername());
 		} catch (UserNotFoundException e) {
 			e.printStackTrace();
 			return null;
 		}
 	}
 	
-	@RequestMapping(value="/user/delete", method = RequestMethod.DELETE)
-	public User deleteUser(@RequestParam("username") String username) {
+	@RequestMapping(value="/user/delete/{username}", method = RequestMethod.DELETE)
+	public User deleteUser(@PathVariable("username") String username) {
 		try {
 			User user = userService.fetchUserByUsername(username);
 			userService.deleteUserByUsername(username);
