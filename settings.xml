@@ -13,7 +13,7 @@
 			<properties>
 				<sonar.host.url>${env.SONAR}</sonar.host.url>
 				<sonar.login>6655b5996cb00e7e03dca8ca0ba139c76f26b4f9</sonar.login>
-				<sonar.projectName>msjcustomers</sonar.projectName>
+				<sonar.projectName>poc-api</sonar.projectName>
 			</properties>
 		</profile>
 	</profiles>
