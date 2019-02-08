@@ -101,27 +101,109 @@
                     </execution>
                 </executions>
 			</plugin>
-            <plugin>
-                <groupId>org.jvnet.jaxb2.maven2</groupId>
-                <artifactId>maven-jaxb2-plugin</artifactId>
-                <version>0.12.3</version>
-                <executions>
-                    <execution>
-                        <id>gen-soap</id>
-                        <goals>
-                            <goal>generate</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <schemaLanguage>WSDL</schemaLanguage>
-                    <generatePackage>soap.metrics</generatePackage>
-                    <schemaIncludes>
-                        <include>*.wsdl</include>
-                    </schemaIncludes>
-                </configuration>
-            </plugin>
+            <!--<plugin>-->
+                <!--<groupId>org.jvnet.jaxb2.maven2</groupId>-->
+                <!--<artifactId>maven-jaxb2-plugin</artifactId>-->
+                <!--<version>0.12.3</version>-->
+                <!--<executions>-->
+                    <!--<execution>-->
+                        <!--<id>gen-soap</id>-->
+                        <!--<goals>-->
+                            <!--<goal>generate</goal>-->
+                        <!--</goals>-->
+                    <!--</execution>-->
+                <!--</executions>-->
+                <!--<configuration>-->
+                    <!--<schemaLanguage>WSDL</schemaLanguage>-->
+                    <!--<generatePackage>soap.metrics</generatePackage>-->
+                    <!--<schemaIncludes>-->
+                        <!--<include>*.wsdl</include>-->
+                    <!--</schemaIncludes>-->
+                <!--</configuration>-->
+            <!--</plugin>-->
+            <!--<plugin>-->
+                <!--<groupId>org.codehaus.mojo</groupId>-->
+                <!--<artifactId>exec-maven-plugin</artifactId>-->
+                <!--<executions>-->
+                    <!--<execution>-->
+                        <!--&lt;!&ndash;-->
+                        <!--mvn exec:exec@gen-soap -Dwsdl=src/main/resources/calculator.wsdl -DwsName=calc-->
+                         <!--&ndash;&gt;-->
+                        <!--<id>gen-soap</id>-->
+                        <!--<goals>-->
+                            <!--<goal>exec</goal>-->
+                        <!--</goals>-->
+                        <!--<configuration>-->
+                            <!--<executable>wsimport</executable>-->
+                            <!--<arguments>-->
+                                <!--<argument>-keep</argument>-->
+                                <!--<argument>-verbose</argument>-->
+                                <!--<argument>-d</argument><argument>src/main/java/</argument>-->
+                                <!--<argument>-p</argument><argument>ar.com.galicia.pocapi.soap.client</argument>-->
+                                <!--<argument>${wsdl}</argument>-->
+
+                            <!--</arguments>-->
+                        <!--</configuration>-->
+                    <!--</execution>-->
+                <!--</executions>-->
+            <!--</plugin>-->
+
+            <!--<plugin>-->
+                <!--<groupId>org.codehaus.mojo</groupId>-->
+                <!--<artifactId>jaxws-maven-plugin</artifactId>-->
+                <!--<version>1.12</version>-->
+                <!--<executions>-->
+                    <!--<execution>-->
+                        <!--<id>gen-soap</id>-->
+                        <!--<goals>-->
+                            <!--<goal>wsimport</goal>-->
+                        <!--</goals>-->
+                        <!--<configuration>-->
+                            <!--&lt;!&ndash; using wsdl from an url &ndash;&gt;-->
+                            <!--<wsdlUrls>-->
+                                <!--<wsdlUrl>-->
+                                    <!--http://www.dneonline.com/calculator.asmx?WSDL-->
+                                <!--</wsdlUrl>-->
+                            <!--</wsdlUrls>-->
+                            <!--&lt;!&ndash; or using wsdls file directory &ndash;&gt;-->
+                            <!--&lt;!&ndash;<wsdlDirectory>src/main/resources</wsdlDirectory>&ndash;&gt;-->
+                            <!--&lt;!&ndash; which wsdl file &ndash;&gt;-->
+                            <!--&lt;!&ndash; <wsdlFiles> &ndash;&gt;-->
+                            <!--&lt;!&ndash;<wsdlFile>calculator.wsd</wsdlFile>&ndash;&gt;-->
+                            <!--&lt;!&ndash;</wsdlFiles> &ndash;&gt;-->
+                            <!--&lt;!&ndash; Keep generated files &ndash;&gt;-->
+                            <!--<keep>true</keep>-->
+                            <!--&lt;!&ndash; Package name &ndash;&gt;-->
+                            <!--<packageName>ar.com.galicia.pocapi.soap.client</packageName>-->
+                            <!--&lt;!&ndash; generated source files destination&ndash;&gt;-->
+                            <!--<sourceDestDir>src/main/java/</sourceDestDir>-->
+                        <!--</configuration>-->
+                    <!--</execution>-->
+                <!--</executions>-->
+
+            <!--</plugin>-->
+            <!--<plugin>-->
+                <!--<groupId>org.jvnet.jaxb2.maven2</groupId>-->
+                <!--<artifactId>maven-jaxb2-plugin</artifactId>-->
+                <!--<version>0.12.3</version>-->
+                <!--<executions>-->
+                    <!--<execution>-->
+                        <!--<id>gen-soap</id>-->
+                        <!--<goals>-->
+                            <!--<goal>generate</goal>-->
+                        <!--</goals>-->
+                    <!--</execution>-->
+                <!--</executions>-->
+                <!--<configuration>-->
+                    <!--<schemaLanguage>WSDL</schemaLanguage>-->
+                    <!--<generatePackage>ar.com.galicia.pocapi.soap.client</generatePackage>-->
+                    <!--<schemaIncludes>-->
+                        <!--<include>*.wsdl</include>-->
+                    <!--</schemaIncludes>-->
+                <!--</configuration>-->
+            <!--</plugin>-->
 		</plugins>
+
 	</build>
 
 </project>

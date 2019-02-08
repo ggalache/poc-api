@@ -1,6 +1,10 @@
 APP_NAME=apirest-poc
 APP_CONTEXT_PATH=/api-poc
 
+#soap-services
+SOAP_CALC_URL=http://www.dneonline.com/calculator.asmx
+SOAP_CALC_PKG=ar.com.galicia.pocapi.soap.client
+
 #Enabling H2 Console
 APP_CONSOLE_ENABLE=true
 
