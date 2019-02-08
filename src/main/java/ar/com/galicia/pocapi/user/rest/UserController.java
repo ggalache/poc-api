@@ -1,5 +1,6 @@
 package ar.com.galicia.pocapi.user.rest;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,35 +20,36 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 	
-	@RequestMapping(value="/user/{username}", method = RequestMethod.GET)
-	public User getUser(@PathVariable("username") String username) {
-		return userService.fetchUserByUsername(username);
-	}
-	
-	@RequestMapping(value="/user", method = RequestMethod.GET)
+	@RequestMapping(value="/users/login", method = RequestMethod.POST)
 	public User loginUser(@RequestParam("username") String username, @RequestParam("password") String password) {
 		return userService.login(username, password);
 	}
-	
-	@RequestMapping(value="/user/list", method = RequestMethod.GET)
-	public Collection<User> getUsers() {
-		return userService.fetchAll();
+
+	@RequestMapping(value= "/users", method = RequestMethod.GET)
+	public Collection<User> getUsers(@RequestParam(required = false) String username) {
+		if(username == null) {
+			return userService.fetchAll();
+		}
+		Collection<User> user = new ArrayList<>();
+		user.add(userService.fetchUserByUsername(username));
+		return user;
 	}
 	
-	@RequestMapping(value="/user/create", method = RequestMethod.POST)
+	
+	@RequestMapping(value="/users", method = RequestMethod.PUT)
 	public User createUser(@RequestBody User user) {
 		userService.createUser(user);
 		return userService.fetchUserByUsername(user.getUsername());
 	}
 	
-	@RequestMapping(value="/user/update", method = RequestMethod.PUT)
+	@RequestMapping(value="/users", method = RequestMethod.POST)
 	public User updateUser(@RequestBody User user) {
 		userService.editUser(user);
 		return userService.fetchUserByUsername(user.getUsername());
 	}
 	
-	@RequestMapping(value="/user/delete/{username}", method = RequestMethod.DELETE)
-	public User deleteUser(@PathVariable("username") String username) {
+	@RequestMapping(value="/user/{username}", method = RequestMethod.DELETE)
+	public User deleteUser(@PathVariable String username) {
 		User user = userService.fetchUserByUsername(username);
 		userService.deleteUserByUsername(username);
 		return user;
