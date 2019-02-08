@@ -36,14 +36,15 @@ public class UserController {
 	}
 	
 	
-	@RequestMapping(value="/users", method = RequestMethod.PUT)
+	@RequestMapping(value="/users", method = RequestMethod.POST)
 	public User createUser(@RequestBody User user) {
 		userService.createUser(user);
 		return userService.fetchUserByUsername(user.getUsername());
 	}
 	
-	@RequestMapping(value="/users", method = RequestMethod.POST)
-	public User updateUser(@RequestBody User user) {
+	@RequestMapping(value="/users/{username}", method = RequestMethod.PUT)
+	public User updateUser(@PathVariable String username, @RequestBody User user) {
+		user.setUsername(username);
 		userService.editUser(user);
 		return userService.fetchUserByUsername(user.getUsername());
 	}
