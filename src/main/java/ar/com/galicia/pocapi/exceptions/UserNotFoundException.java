@@ -5,11 +5,11 @@ package ar.com.galicia.pocapi.exceptions;
  * 
  * @author mrsanchez
  */
-public class UserNotFoundException extends Exception {
+public class UserNotFoundException extends RuntimeException {
 
 	private static final long serialVersionUID = -8718868782771306239L;
 
 	public UserNotFoundException(String username) {
-		super("Error al autenticar el usuario: "+ username);
+		super("No se encuentra el usuario: "+ username);
 	}
 }

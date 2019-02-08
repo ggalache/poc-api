@@ -6,7 +6,6 @@ import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
 
 /**
  * Entidad que representa un usuario básico.
@@ -18,8 +17,7 @@ import javax.persistence.SequenceGenerator;
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "hibernateSequence")
-    @SequenceGenerator(name = "hibernateSequence", sequenceName= "HIBERNATE_SEQUENCE", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "increment")
     private long id;
 
     @Column(nullable=false, length=30)
