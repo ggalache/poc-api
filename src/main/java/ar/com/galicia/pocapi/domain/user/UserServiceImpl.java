@@ -34,7 +34,7 @@ public class UserServiceImpl implements UserService {
     }
 
     private boolean isUserValid(String password, Optional<User> optUser) {
-        return optUser.get().isEnabled() && optUser.get().getPassword().equals(password);
+        return optUser.get().getPassword().equals(password);
     }
 
 	@Override
