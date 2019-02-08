@@ -8,6 +8,10 @@ import org.springframework.boot.actuate.health.Health;
 import org.springframework.boot.actuate.health.HealthIndicator;
 import org.springframework.stereotype.Component;
 import org.springframework.ws.client.WebServiceIOException;
+import org.springframework.ws.client.WebServiceTransformerException;
+import org.springframework.ws.soap.client.SoapFaultClientException;
+
+import java.io.IOException;
 
 @Component
 public class SOAPServiceHealthIndicator implements HealthIndicator {
@@ -17,8 +21,15 @@ public class SOAPServiceHealthIndicator implements HealthIndicator {
     public Health health() {
         try {
             DivideResponse result = calcService.divide(1, 1);
-        }catch(WebServiceIOException e){
-            return Health.down().withException(e.getRootCause()).build();
+        }
+        catch (  WebServiceTransformerException e){
+            return Health.unknown().withException(e.getRootCause()).build();
+        }
+        catch (SoapFaultClientException e){
+            return Health.unknown().withException(e).build();
+        }
+        catch(WebServiceIOException e){
+            return Health.down(e).build();
         }
         return Health.up().build();
     }
