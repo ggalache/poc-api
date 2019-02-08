@@ -49,7 +49,7 @@ public class UserController {
 		return userService.fetchUserByUsername(user.getUsername());
 	}
 	
-	@RequestMapping(value="/user/{username}", method = RequestMethod.DELETE)
+	@RequestMapping(value="/users/{username}", method = RequestMethod.DELETE)
 	public User deleteUser(@PathVariable String username) {
 		User user = userService.fetchUserByUsername(username);
 		userService.deleteUserByUsername(username);
